@@ -1,0 +1,50 @@
+---
+layout: monster
+name: "\"Black Dead\" Charger"
+level: 3
+role: Skirmisher
+size: Medium
+origin: Natural
+type: Humanoid
+keywords: 
+experience_points: 150
+initiative: "+4"
+perception: "+0"
+special_senses: Darkvision
+#aura:
+#  name: Some Aura
+#  keyword: (Nasty)
+#  range: 3
+#  effect: Something nasty happens.
+
+hit_points: 46
+bloodied: 23
+armor_class: 17
+fortitude: 15
+reflex: 15
+will: 13
+#saving_throws: 
+#immune:
+#resist:
+vulnerable: 4 radiant
+speed: 8
+#action_points: 
+
+---
+
+h2. Description
+
+Describe the beastie.
+
+h2. Tactics
+
+How do they fight?
+
+h2. Lore
+
+....
+
+h2. Encounter Groups
+
+* 1 something, 2 somethings, 3 somethings
+* 2 somethigns, 1 something else, 2 nothings

@@ -1,0 +1,32 @@
+.monster {
+  border: 1px solid black;
+  padding: 0px;
+  width: 500px;
+}
+
+.monster .header {
+  color: white;
+  background-color: green;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.monster .header .name,
+.monster .header .level,
+.monster .header .role {
+  font-weight: bold;
+  font-size: 110%;
+  font-family: arial, sans-serif;
+} 
+
+
+.monster .header .size {
+  display: inline-block;
+}
+
+
+
+
+label {
+  font-weight: bold;
+}

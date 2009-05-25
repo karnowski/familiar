@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="monster">
+  <div class="header">
+    <div class="line-1">
+      <span class="name">{{ page.name }}</span>
+      <span class="level">Level {{ page.level }}</span>
+      <span class="role">{{ page.role }}</span>
+    </div>
+    <div class="line-2">
+      <span class="size">{{ page.size }}</span>
+      <span class="origin">{{ page.origin }}</span>
+      <span class="type">{{ page.type }}</span>
+      <span class="keywords">{{ page.keywords }}</span>
+      <span class="experience_points">XP {{ page.experience_points }}</span>
+    </div>
+  </div>
+  
+  <div class="pre-powers">
+    <span class="initiative"><label>Initiative</label> {{ page.initiative }}</span>
+    <span class="senses"><label>Senses</label> Perception {{ page.perception }} {{ page.special_senses }}</span>
+
+    {% if page.aura %}
+    <span class="aura"><label>Aura</label> {{ page.aura.name }} {{ page.aura.keyword }} {{ page.aura.range }} {{ page.aura.effect }}</span>
+    {% endif %}
+
+    <span class="hit-points"><label>HP</label> {{ page.hit_points }}</span>
+    <span class="bloodied"><label>Bloodied</label> {{ page.bloodied }}</span>
+    <span class="armor-class"><label>AC</label> {{ page.armor_class }}</span>
+    <span class="fortitude"><label>Fortitude</label> {{ page.fortitude }}</span>
+    <span class="reflex"><label>Reflex</label> {{ page.reflex }}</span>
+    <span class="will"><label>Will</label> {{ page.will }}</span>
+
+    {% if page.immune %}<span class="immune"><label>Immune</label> {{ page.immune }}</span>{% endif %}
+    {% if page.resist %}<span class="resist"><label>Resist</label> {{ page.resist }}</span>{% endif %}
+    {% if page.vulnerable %}<span class="vulnerable"><label>Vulnerable</label> {{ page.vulnerable }}</span>{% endif %}
+    
+    {% if page.saving_throws %}<span class="saving-throws"><label>Saving Throws</label> {{ page.saving_throws }}</span>{% endif %}
+    <span class="speed"><label>Speed</label> {{ page.speed }}</span>
+    {% if page.action_points %}<span class="action-points"><label>Action Points</label> {{ page.action_points }}</span>{% endif %}
+  </div>
+  
+  <div class="powers">
+  </div>
+  
+  <div class="post-powers">
+
+  </div>
+</div>
+
+{{ content }}
