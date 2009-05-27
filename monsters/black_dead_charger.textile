@@ -32,27 +32,27 @@ speed: 8
 
 powers:
   - name: Claw
-    type: basic melee
+    type: basic-melee
     action: standard
     recharge: at-will
     description: +8 vs AC; 1d6+3 damage
   - name: Bite
-    type: basic melee
+    type: basic-melee
     action: standard
     recharge: at-will
     keywords: Disease
     description: +8 vs AC; 1d6+3 damage; only when has combat advantage; target contracts Black Death
-  - name: Combat Advantage
-    action: standard
-    recharge: at-will
-    keywords: Disease
-    description: "If the \"Black Dead\" Charger has combat advantage against a target, then a hit knocks target prone and contracts Black Death."
   - name: Biting Charge
     type: melee
     action: standard + move
     recharge: encounter
     keywords: Disease
     description: "+9 vs AC (includes charge bonus); 2d6+4 damage; On a successful charge attack, target is knocked prone and contracts Black Death."
+  - name: Combat Advantage
+    action: standard
+    recharge: at-will
+    keywords: Disease
+    description: "If the \"Black Dead\" Charger has combat advantage against a target, then a hit knocks target prone and contracts Black Death."
   - name: Rise Again
     action: when reduced to 0 hit points
     description: "\"Black Dead\" Charger rises as a Zombie (MM p274) with 12 hit points 1d4 rounds after its death."

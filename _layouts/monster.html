@@ -62,7 +62,7 @@ layout: default
   <ul class="powers">
     {% for power in page.powers %}
       <li class="power">
-        <div class="power-header">
+        <div class="power-header {{ power.type }}">
           <span class="name">{{ power.name }}</span>
           (<span class="action">{{ power.action }}</span>{% if power.recharge %}; <span class="action">{{ power.recharge }}</span>{% endif %})
           

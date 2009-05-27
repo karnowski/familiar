@@ -55,3 +55,22 @@ label { font-weight: bold; }
 .monster .ability-scores { width: 80%; }
 
 .monster .skills { display:block; }
+
+.monster .power-header.melee,
+.monster .power-header.basic-melee,
+.monster .power-header.ranged,
+.monster .power-header.basic-ranged,
+.monster .power-header.close,
+.monster .power-header.area
+{
+  padding-left: 24px;
+  background-repeat: no-repeat;
+  background-position: 2px 0px;
+}
+
+.monster .power-header.melee  { background-image: url(/images/attack-melee.gif); }
+.monster .power-header.ranged { background-image: url(/images/attack-ranged.gif); }
+.monster .power-header.close  { background-image: url(/images/attack-close.gif); }
+.monster .power-header.area   { background-image: url(/images/attack-area.gif); }
+.monster .power-header.basic-melee { background-image: url(/images/attack-basic-melee.gif); }
+.monster .power-header.basic-ranged { background-image: url(/images/attack-basic-ranged.gif); }

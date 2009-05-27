@@ -21,6 +21,7 @@ speed: 8, see also <em>goblin tactics</em>
 
 powers:
   - name: Hexer Rod
+    type: basic-melee
     action: standard
     recharge: at-will
     keywords: Weapon
