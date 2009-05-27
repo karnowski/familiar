@@ -1,0 +1,73 @@
+---
+layout: monster
+name: Goblin Hexer
+level: 3
+role: Controller (Leader)
+size: Small
+origin: Natural
+type: Humanoid
+experience_points: 150
+initiative: "+3"
+perception: "+2"
+special_senses: low-light vision
+
+hit_points: 46
+bloodied: 23
+armor_class: 17
+fortitude: 14
+reflex: 15
+will: 16; see also <em>lead from the rear</em>
+speed: 8, see also <em>goblin tactics</em>
+
+powers:
+  - name: Hexer Rod
+    action: standard
+    recharge: at-will
+    keywords: Weapon
+    description: +8 vs AC; 1d6+3 damage
+  - name: Blinding Hex
+    type: ranged
+    action: standard
+    recharge: at-will
+    description: Ranged 10; +7 vs Fortitude; the target takes 2d6+1 damage, and the target is blinded (save ends).
+  - name: Stinging Hex
+    type: ranged
+    action: standard
+    recharge: "recharge: 5, 6"
+    description: Ranged 10; +7 vs Will; the target takes 3d6+1 damage if it moves during its turn (save ends)
+  - name: Vexing Cloud
+    type: area
+    action: standard; sustain minor
+    recharge: encounter
+    keywords: Zone
+    description: Area burst 3 within 10; automatic hit; all enemies within the zone take a -2 penalty to attack rolls.  The zone grants concealment to the goblin hexer and its allies.  The goblin hexer can sustain the zone as a minor action, moving it up to 5 squares.
+  - name: Incite Bravery
+    type: ranged
+    action: immediate reaction; when an ally uses <em>goblin tactics</em>
+    recharge: at-will
+    description: Ranged 10; the targeted ally can shift 2 more squares and make an attack.
+  - name: Goblin Tactics
+    action: immediate reaction; when missed by a melee attack
+    recharge: at-will
+    description: The goblin shifts 1 square.
+  - name: Lead From the Rear
+    action: immediate interrupt; when targeted by a ranged attack
+    recharge: at-will
+    description: The goblin hexer can change the attack's target to an adjacent ally of its level or lower.
+    
+alignment: Evil
+languages: [Common, Goblin]
+skills: [Stealth +10, Thievery +10]
+str: 10 (+1)
+dex: 15 (+3)
+wis: 13 (+2)
+con: 14 (+3)
+int: 9 (+0)
+cha: 18 (+5)
+
+equipment: leather robes, hexer rod
+---
+
+h2. Tactics
+
+The goblin hexer uses _lead from the rear_ to turn nearby allies into meat shields while it casts _vexing cloud_ around itself and its closets allies and enemies.  It then targets an enemy defender with _stinging hex_ and uses it _blinding hex_ on foes making ranged attacks.  When another goblin within 10 squares users _goblin tactics_, the goblin hexer uses _incite bravery_ to allow that goblin to make a free attack.

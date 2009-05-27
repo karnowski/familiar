@@ -3,51 +3,121 @@ layout: default
 ---
 
 <div class="monster">
-  <div class="header">
-    <div class="line-1">
-      <span class="name">{{ page.name }}</span>
-      <span class="level">Level {{ page.level }}</span>
-      <span class="role">{{ page.role }}</span>
-    </div>
-    <div class="line-2">
-      <span class="size">{{ page.size }}</span>
-      <span class="origin">{{ page.origin }}</span>
-      <span class="type">{{ page.type }}</span>
-      <span class="keywords">{{ page.keywords }}</span>
-      <span class="experience_points">XP {{ page.experience_points }}</span>
-    </div>
-  </div>
+  <table class="header">
+    <tr>
+      <td>
+        <span class="name">{{ page.name }}</span>
+      </td>
+      <td>
+        <span class="level">Level {{ page.level }}</span>
+        <span class="role">{{ page.role }}</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span class="size">{{ page.size }}</span>
+        <span class="origin">{{ page.origin }}</span>
+        <span class="type">{{ page.type }}</span>
+        {% if page.keywords %}<span class="keywords">({{ page.keywords }})</span>{% endif %}
+      </td>
+      <td>
+        <span class="experience_points">XP {{ page.experience_points }}</span>
+      </td>
+    </tr>
+  </table>
   
   <div class="pre-powers">
     <span class="initiative"><label>Initiative</label> {{ page.initiative }}</span>
-    <span class="senses"><label>Senses</label> Perception {{ page.perception }} {{ page.special_senses }}</span>
+    <span class="senses"><label>Senses</label> Perception {{ page.perception }}{% if page.special_senses %}; {{ page.special_senses }}{% endif %}</span>
 
     {% if page.aura %}
-    <span class="aura"><label>Aura</label> {{ page.aura.name }} {{ page.aura.keyword }} {{ page.aura.range }} {{ page.aura.effect }}</span>
+      <span class="aura">
+        <label>Aura</label> 
+        {{ page.aura.name }} 
+        {{ page.aura.keyword }} 
+        {{ page.aura.range }} 
+        {{ page.aura.effect }}
+      </span>
     {% endif %}
 
-    <span class="hit-points"><label>HP</label> {{ page.hit_points }}</span>
-    <span class="bloodied"><label>Bloodied</label> {{ page.bloodied }}</span>
-    <span class="armor-class"><label>AC</label> {{ page.armor_class }}</span>
-    <span class="fortitude"><label>Fortitude</label> {{ page.fortitude }}</span>
-    <span class="reflex"><label>Reflex</label> {{ page.reflex }}</span>
-    <span class="will"><label>Will</label> {{ page.will }}</span>
+    <span class="hit-points"><label>HP</label> {{ page.hit_points }}; <label>Bloodied</label> {{ page.bloodied }}</span>
+    <span class="defenses">
+      <label>AC</label> {{ page.armor_class }};
+      <label>Fortitude</label> {{ page.fortitude }};
+      <label>Reflex</label> {{ page.reflex }};
+      <label>Will</label> {{ page.will }}
+    </span>
 
-    {% if page.immune %}<span class="immune"><label>Immune</label> {{ page.immune }}</span>{% endif %}
-    {% if page.resist %}<span class="resist"><label>Resist</label> {{ page.resist }}</span>{% endif %}
-    {% if page.vulnerable %}<span class="vulnerable"><label>Vulnerable</label> {{ page.vulnerable }}</span>{% endif %}
+    <span class="immune-resist-vulnerable">
+      {% if page.immune %}<span class="immune"><label>Immune</label> {{ page.immune }}</span>{% endif %}
+      {% if page.resist %}<span class="resist"><label>Resist</label> {{ page.resist }}</span>{% endif %}
+      {% if page.vulnerable %}<span class="vulnerable"><label>Vulnerable</label> {{ page.vulnerable }}</span>{% endif %}
+    </span>
     
     {% if page.saving_throws %}<span class="saving-throws"><label>Saving Throws</label> {{ page.saving_throws }}</span>{% endif %}
     <span class="speed"><label>Speed</label> {{ page.speed }}</span>
     {% if page.action_points %}<span class="action-points"><label>Action Points</label> {{ page.action_points }}</span>{% endif %}
   </div>
   
-  <div class="powers">
-  </div>
+  <ul class="powers">
+    {% for power in page.powers %}
+      <li class="power">
+        <div class="power-header">
+          <span class="name">{{ power.name }}</span>
+          (<span class="action">{{ power.action }}</span>{% if power.recharge %}; <span class="action">{{ power.recharge }}</span>{% endif %})
+          
+          {% if power.keywords %}
+            &diams;
+            <span class="keywords">{{ power.keywords | join: ", " }}</span>
+          {% endif %}
+        </div>
+      
+        <div class="power-details">
+          {{ power.description }}
+        <div>
+      </li>
+    {% endfor %}
+  </ul>
   
   <div class="post-powers">
-
+    <span class="alignment"><label>Alignment</label> {{ page.alignment }}</span>
+    <span class="languages">
+      <label>Languages</label> 
+      
+      {% if page.languages %}
+        {{ page.languages | join: ", " }}
+      {% else %}
+        &ndash;
+      {% endif %}
+    </span>
+    
+    {% if page.skills %}
+      <span class="skills">
+        <label>Skills</label>
+        {{ page.skills | join: ", " }}
+      </span>
+    {% endif %}
+    
+    <table cellspacing="0" cellpadding="0" class="ability-scores">
+      <tr>
+        <td><label>Str</label></td><td>{{ page.str }}</td>
+        <td><label>Dex</label></td><td>{{ page.dex }}</td>
+        <td><label>Wis</label></td><td>{{ page.wis }}</td>
+      </tr>
+      <tr>
+        <td><label>Con</label></td><td>{{ page.con }}</td>
+        <td><label>Int</label></td><td>{{ page.int }}</td>
+        <td><label>Cha</label></td><td>{{ page.cha }}</td>
+      </tr>
+    </table>
   </div>
+  
+  {% if page.equipment %}
+    <div class="equipment"> 
+      <label>Equipment</label>
+      {{ page.equipment }}
+    </div>
+  {% endif %}
 </div>
 
 {{ content }}

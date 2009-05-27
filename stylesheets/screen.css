@@ -1,32 +1,57 @@
+body { font-family: arial, sans-serif; font-size: 14px;}
+label { font-weight: bold; }
+
 .monster {
   border: 1px solid black;
   padding: 0px;
   width: 500px;
+  background-color: #e7e5d3;  
 }
 
 .monster .header {
+  width: 100%;
   color: white;
-  background-color: green;
+  background-color: #48542E;
   border-bottom: 1px solid black;
-  padding: 5px;
+  padding: 0px 5px 0px 5px;
 }
+
+.monster table.header tr td + td  { text-align: right; }
+.monster table.header tr { padding: 0px; }
 
 .monster .header .name,
 .monster .header .level,
 .monster .header .role {
   font-weight: bold;
-  font-size: 110%;
-  font-family: arial, sans-serif;
+  font-size: 105%;
 } 
 
+.monster .pre-powers { 
+  padding: 5px; 
 
-.monster .header .size {
-  display: inline-block;
 }
 
+.monster .initiative, .monster .post-powers .alignment { min-width: 200px; display: inline-block;}
 
+.monster .hit-points, 
+.monster .defenses,
+.monster .immune-resist-vulnerable,
+.monster .saving-throws,
+.monster .speed,
+.monster .action-points
+{ display: block; }
 
+.monster ul.powers { list-style: none; padding-left: 0px; padding-bottom: 5px; margin: 0px; width: 100%;}
 
-label {
-  font-weight: bold;
+.monster .powers .power-header, .monster .post-powers { 
+  background: #c7c7af; 
+  padding: 2px 0px 2px 5px; 
 }
+
+.monster .powers .power-header .name, .monster .powers .power-header .keywords { font-weight: bold; }
+
+.monster .powers .power-details, .monster .equipment {  padding: 2px 0px 2px 5px; }
+
+.monster .ability-scores { width: 80%; }
+
+.monster .skills { display:block; }

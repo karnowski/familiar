@@ -6,7 +6,7 @@ role: Skirmisher
 size: Medium
 origin: Natural
 type: Humanoid
-keywords: 
+#keywords: 
 experience_points: 150
 initiative: "+4"
 perception: "+0"
@@ -30,21 +30,47 @@ vulnerable: 4 radiant
 speed: 8
 #action_points: 
 
+powers:
+  - name: Claw
+    type: basic melee
+    action: standard
+    recharge: at-will
+    description: +8 vs AC; 1d6+3 damage
+  - name: Bite
+    type: basic melee
+    action: standard
+    recharge: at-will
+    keywords: Disease
+    description: +8 vs AC; 1d6+3 damage; only when has combat advantage; target contracts Black Death
+  - name: Combat Advantage
+    action: standard
+    recharge: at-will
+    keywords: Disease
+    description: "If the \"Black Dead\" Charger has combat advantage against a target, then a hit knocks target prone and contracts Black Death."
+  - name: Biting Charge
+    type: melee
+    action: standard + move
+    recharge: encounter
+    keywords: Disease
+    description: "+9 vs AC (includes charge bonus); 2d6+4 damage; On a successful charge attack, target is knocked prone and contracts Black Death."
+  - name: Rise Again
+    action: when reduced to 0 hit points
+    description: "\"Black Dead\" Charger rises as a Zombie (MM p274) with 12 hit points 1d4 rounds after its death."
+    
+alignment: Unaligned
+str: 16 (+3)
+dex: 14 (+2)
+wis: 8 (-1)
+con: 14 (+2)
+int: 6 (-2)
+cha: 5 (-3)
 ---
-
-h2. Description
-
-Describe the beastie.
 
 h2. Tactics
 
-How do they fight?
+"Black Dead" Chargers mindlessly run towards at the nearest living creature for a _biting charge_, attempting to knock prone and bite their prey.  They relentlessly bite and bite any prone target.  If they cannot knock a target down, they rake with their claws mindlessly.  
 
-h2. Lore
+Multiple Chargers will try to gain combat advantage against a single foe to knock them prone.  Then they will all use bite attacks.
 
-....
+"Black Dead" Chargers will fight until bloodied, and then they run away, leaving behind all others of their kind.
 
-h2. Encounter Groups
-
-* 1 something, 2 somethings, 3 somethings
-* 2 somethigns, 1 something else, 2 nothings
